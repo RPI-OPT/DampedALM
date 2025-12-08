@@ -1,6 +1,6 @@
 **DPALM**
 
-This repository is the implementation of the paper: Damped Proximal Augmented Lagrangian Method for weakly-Convex Problems with Convex Constraints. [(Dahal, Wei, and Xu 2023)] (https://arxiv.org/pdf/2311.09065). 
+This repository is the implementation of the paper: Damped Proximal Augmented Lagrangian Method for weakly-Convex Problems with Convex Constraints. [(Dahal, Wei, and Xu 2023)](https://arxiv.org/pdf/2311.09065). 
 
 **Requirements**
 
@@ -71,7 +71,7 @@ On MATLAB 2023a installed on a 2017 27-inch iMac with one 3.4 GHz Quad-Core Inte
 
 **License**
 
-See the [License] (LICENSE.txt) file for license rights and limitations (MIT).
+See the [License](LICENSE.txt) file for license rights and limitations (MIT).
 
 
 
