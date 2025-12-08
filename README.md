@@ -66,5 +66,8 @@ On MATLAB 2023a installed on a 2017 27-inch iMac with one 3.4 GHz Quad-Core Inte
   <img src="ROC_based fairness/plots/dual_compas.jpg" width="45%" />
 </p>
 
+**Reference**
+1. Dahal, Hari, Wei Liu, and Yangyang Xu. "Damped proximal augmented Lagrangian method for weakly-convex problems with convex constraints." arXiv preprint arXiv:2311.09065 (2023).
+
 
 
