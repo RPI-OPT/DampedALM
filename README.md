@@ -17,7 +17,7 @@ The file "QCQP" includes the main code for DPALM and a testfile to run the code.
 
 The file "Linear Constrained NLLS" includes the main code for DPALM and a testfile to run the code. This code is for section 4.4 in our paper. 
 
-The file "ROC_based Firness" includes the main code for DPALM, two datasets, and two testfiles to run the code. This code is for section 4.5 in our paper. 
+The file "ROC_based Fairness" includes the main code for DPALM, two datasets, and two testfiles to run the code. This code is for section 4.5 in our paper. 
 
 **Usage**
 
