@@ -39,12 +39,12 @@ On MATLAB 2023a installed on a 2017 27-inch iMac with one 3.4 GHz Quad-Core Inte
 
 **QCQP**
 <p align="center">
-  <img src="LCQP/plots/primal_qcqp.jpg" width="45%" />
-  <img src="LCQP/plots/dual_qcqp.jpg" width="45%" />
+  <img src="QCQP/plots/primal_qcqp.jpg" width="45%" />
+  <img src="QCQP/plots/dual_qcqp.jpg" width="45%" />
 </p>
 
 <p align="center">
-  <img src="LCQP/plots/legend.png" width="50%" />
+  <img src="QCQP/plots/legend.png" width="50%" />
 </p>
 
 
