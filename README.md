@@ -28,6 +28,9 @@ On MATLAB 2023a installed on a 2017 27-inch iMac with one 3.4 GHz Quad-Core Inte
 
 **LCQP**
 
+LCQP/plots/primal_feasibility_qp3.pdf 
+LCQP/plots/dual_feasibility_qp3.pdf
+LCQP/plots/legend.pdf
 
 
 
