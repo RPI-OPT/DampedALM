@@ -50,8 +50,8 @@ On MATLAB 2023a installed on a 2017 27-inch iMac with one 3.4 GHz Quad-Core Inte
 **Linear Constrained Nonlinear Least Squares**
 
 <p align="center">
-  <img src="Linear Constrained NLLS/plots/primal_nlls.jpg" width="45%" />
-  <img src="Linear Constrained NLLS/plots/dual_nlls.jpg" width="45%" />
+  <img src="Linear constrained NLLS/plots/primal_nlls.jpg" width="45%" />
+  <img src="Linear constrained NLLS/plots/dual_nlls.jpg" width="45%" />
 </p>
 
 **ROC based Fairness**
