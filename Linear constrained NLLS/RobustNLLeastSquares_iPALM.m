@@ -1,7 +1,7 @@
 function [out] = RobustNLLeastSquares_iPALM(opts,x,y,beta0,epsilon,m,n,rho,maxiter,cons_nu,u0)
 %# Problem setting
 % we are solving a quadratic problem with non convex quadratic objective and a
-% convex constraint, i.e. min_x 0.5*x'Q_0x + c_0'x  s.t Ax = b, x \in [down,up]
+% convex constraint, i.e. min_x \|f(x)\|_1  s.t Ax = b, x \in [down,up], where f is a smooth mapping
 
 %Parameters
 % x is the primal variable, y and z are dual variables
@@ -84,12 +84,8 @@ function [x,ngrad,i,err,L1, Ak] = inner(x, y, A, b, B, atb, beta , Q, c, rho,dow
 
 % f(x) is the smooth part of the objective, f(x) = 0.5*x'*Q0*x + c0'*x +
 % y'(A*x-b) + 0.5*beta*norm(A*x-b)^2 + 0.5*rho*norm(x-xk)^2
-% \Psi(x) = \tau_[-10,10](x) + 0.5*rho*norm(x-xk)^2
+% \Psi(x) is the indicator function on the box constraint
 %xk is the previous value of x
-%a_i and A_i are parameters where A_{i+1} = A_{i}+a_{i+1}
-%v_i is argmin \psi_i(x) where psi_i(x) is an estimate function updated as
-%\psi_(i+1)(x) = \psi_i(x) + a_{i+1}(x)[f(x_{i+1})+<\nabla f(x_{i+1}),x-x_{i+1}>+\Psi(x)]
-% T_L(y) is given by prox_{1/L \Psi(x)}(y - (1/L)*\nabla f(y)) 
 
 %initializing parameters
 xk      = x;
