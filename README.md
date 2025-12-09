@@ -19,6 +19,7 @@ Our implementation is in MATLAB 2023a.
 </p>
 
 The methods that we compare DPALM against are [HiApeM](https://proceedings.mlr.press/v130/li21d.html), [NLIAPIAL](https://optimization-online.org/wp-content/uploads/2020/08/7971-1.pdf), and [LiMEAL](https://arxiv.org/abs/2101.08519). 
+
 **References**
 1. Dahal, Hari, Wei Liu, and Yangyang Xu. "Damped proximal augmented Lagrangian method for weakly-convex problems with convex constraints." arXiv preprint arXiv:2311.09065 (2023).
 2. Zeng, Jinshan, Wotao Yin, and Ding-Xuan Zhou. "Moreau envelope augmented Lagrangian method for nonconvex optimization with linear constraints." Journal of Scientific Computing 91.2 (2022): 61.
