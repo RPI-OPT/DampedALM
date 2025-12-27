@@ -18,7 +18,7 @@ Our implementation is in MATLAB 2023a.
   <img src="QCQP/plots/legend.png" width="50%" />
 </p>
 
-The methods that we compare DPALM against are [HiApeM](https://proceedings.mlr.press/v130/li21d.html), [NLIAPIAL](https://optimization-online.org/wp-content/uploads/2020/08/7971-1.pdf), and [LiMEAL](https://arxiv.org/abs/2101.08519). 
+The methods that we compare DPALM against are [HiApeM](https://proceedings.mlr.press/v130/li21d.html), [NLIAPIAL](https://optimization-online.org/wp-content/uploads/2020/08/7971-1.pdf), [IPL(A)](https://optimization-online.org/wp-content/uploads/2020/08/7971-1.pdf) and [LiMEAL](https://arxiv.org/abs/2101.08519). 
 
 **References**
 
