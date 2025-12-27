@@ -47,6 +47,8 @@ while i < maxit && kktviola > tol
     %Set the values of beta and inner tolerance and solve the inner subproblem
     beta               = beta0*sqrt(i);
     eps_k              = min([tol/2,tol*sqrt(rho), sqrt(rho),tol/(sqrt(beta*i))]);
+
+    %update the primal variable, x, using inner Nesterov solver
     [x,ngrad,subi,suberr] = inner(x, z, beta , Q0, Q, c0, c,d, rho,down,up,mu,L,eps_k,maxsubit,gammau,gammad,ngrad);
 
     %set the value of stepsize gamma and update the multiplier z
