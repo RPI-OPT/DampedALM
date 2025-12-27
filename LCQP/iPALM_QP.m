@@ -43,6 +43,7 @@ while i < maxouteriter && kkt > epsilon
 
     eps_k           = min(epsilon/2,sqrt(0.5*rho/beta));
 
+    %update the primal variable x using the inner Nesterov solver
     [x,ngrad,subiter,inner_err] =  innerNesterov(x,x,A,B,b,y, beta,rho, Q0,c0,down,up,mu,L,ngrad,eps_k,I);
 
     [alpha, id]   = min([beta,v/(norm(A*x-b)+10^(-15))]);
@@ -81,10 +82,8 @@ end
 function [x,ngrad,i,err] = innerNesterov(x,xk,A,B,b,yk, beta,rho, Q0,c0,down,up,mu,L,ngrad,eps,I)
 %inner subproblem setting 
 
-% f(x) is the smooth part of the objective, f(x) = 0.5*x'*Q0*x + c0'*x +
-% y'(A*x-b) + 0.5*beta*norm(A*x-b)^2 + 0.5*rho*norm(x-xk)^2
+% f(x) is the smooth part of the proximal augmented lagrangian function
 % \Psi(x) is the indicator function on the box constraint
-%xk is the previous value of x
 %a_i and A_i are parameters where A_{i+1} = A_{i}+a_{i+1}
  
     xhat     = x;
@@ -113,8 +112,7 @@ function [x,ngrad,i,err] = innerNesterov(x,xk,A,B,b,yk, beta,rho, Q0,c0,down,up,
 end
 
 
-% finding the error in the first order optimality condition for the inner
-% subproblem
+% finding the error in the first order optimality condition for the subproblem
 function innerviol = getinnerviol(halfgrad,x,C,up,down)
 % grad = Q0*x + c0 + A'*y + beta*A'*(A*x-b) + 2*rho*(x-xk); halfgrad = c0 + A'*yk - beta*A'*b - rho*zk;
 grad = halfgrad + C*x;
