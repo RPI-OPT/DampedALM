@@ -44,6 +44,8 @@ while i < maxiter && err > epsilon
     else
         u         = u0/i;
     end
+    
+    %update primal variable, x, using inner Nesterov solver
     [x,ngrad,subiter, suberr,L,Ak] =  inner(x, y, A, b, B, atb, beta, Q, c, rho,down,up,mu,u,L,eps_k,subit,gammau,gammad,ngrad,m,n);
 
     alpha     = min(beta,v/(norm(A*x-b)+10^(-15)));
@@ -82,10 +84,9 @@ function [x,ngrad,i,err,L1, Ak] = inner(x, y, A, b, B, atb, beta , Q, c, rho,dow
         
 %inner subproblem setting 
 
-% f(x) is the smooth part of the objective, f(x) = 0.5*x'*Q0*x + c0'*x +
-% y'(A*x-b) + 0.5*beta*norm(A*x-b)^2 + 0.5*rho*norm(x-xk)^2
+% f(x) is the smooth part of the Proximal Augmented Lagrangian function 
 % \Psi(x) is the indicator function on the box constraint
-%xk is the previous value of x
+%xk is value of x at k-th outer iteration
 
 %initializing parameters
 xk      = x;
@@ -96,8 +97,7 @@ i       = 0;
 Ak      = 0;
 L_max   = 1e5;
 
-% calculating the Jacobian at x_k to calculate the gradient of the smooth
-% part
+% calculating the Jacobian at x_k
 D       = zeros(m,n);
 for j = 1:m
     D(j,:) = Q{j}*xk + c{j};
@@ -138,17 +138,11 @@ while i < subit && err > eps_k
     v       = getv(Ak,xk,rho,gradsum,down,up);
     L       = L/gammad;
     x       = T;
-%     if L < 5
-%         keyboard;
-%     end
     if rem(i,10) == 0
         err = getinnerviol(A,b,D,B,Q,c,xk,x,y,beta,nu,m,n,rho,up,down);
     end
-%     disp(err)
     i = i + 1;
 end
-% disp(err)
-% disp(i)
 end
 
 % gradient of the smooth part of the subproblem
