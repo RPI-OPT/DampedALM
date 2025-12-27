@@ -30,7 +30,6 @@ x            = x0;
 z            = z0;
 v0           = 10;
 
-%initializing zero vectors to store the values later
 primalviol   = zeros(maxit-1,1);
 dualviol     = primalviol;
 compslack    = primalviol;
