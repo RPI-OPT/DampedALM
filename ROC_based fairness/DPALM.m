@@ -27,6 +27,8 @@ while i < maxiter && err > epsilon
     else
         u = u0/i;
     end
+
+    %update primal variable, x, using inner Nesterov solver
     [x,ngrad,subiter, suberr,L,Ak] =  inner(x, lambda, Au, Ap, A, b, theta, beta, np, nu,...
                                       rho, mu, u, L, eps_k,subit,gammau,gammad,ngrad, kappa, Lstar, down, up);
 
@@ -65,8 +67,7 @@ function [x,ngrad,i,err,L1, Ak] = inner(x, lambda, Au, Ap, A, b, theta, beta, np
         
 %inner subproblem setting 
 
-% f(x) is the smooth part of the objective, f(x) = 0.5*x'*Q0*x + c0'*x +
-% y'(A*x-b) + 0.5*beta*norm(A*x-b)^2 + 0.5*rho*norm(x-xk)^2
+% f(x) is the smooth part of the proximal augmented lagrangian function
 % \Psi(x) is the indicator function on the box constraint
 %oldx is the previous value of x
 
