@@ -1,7 +1,8 @@
 function [out] = RobustNLLeastSquares_iPALM(opts,x,y,beta0,epsilon,m,n,rho,maxiter,cons_nu,u0)
-%# Problem setting
-% we are solving a quadratic problem with non convex quadratic objective and a
-% convex constraint, i.e. min_x \|f(x)\|_1  s.t Ax = b, x \in [down,up], where f is a smooth mapping
+% Problem setting
+% we are solving the following problem
+% min_x \|f(x)\|_1  s.t Ax = b, x \in [down,up], where f is a smooth mapping
+%f(x) is [f_1(x), f_2(x), ..., f_m(x)], f_i(x) = 0.5*x^T*Q_i*x + c_i^T*x
 
 %Parameters
 % x is the primal variable, y and z are dual variables
