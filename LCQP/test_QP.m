@@ -32,7 +32,6 @@ QP.ell = -5;
 QP.u   = 5;
 
 
-
 %you need to tune beta0 if you change rho, default value for 3 values of
 %rho are given here
 if rho == 10
