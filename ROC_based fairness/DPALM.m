@@ -1,6 +1,10 @@
 function out = DPALM(Au, Ap, A,b, maxiter, epsilon, L, x,...
                lambda, beta0, rho, gammau, gammad, theta, mu, u0, const_nu, kappa, Lstar, down, up )
 
+% Problem setting
+% we are solving the problem in subsection 4.5 in the paper
+% problem statement is (64) in the paper
+
 % initializing variables, Ap and Au represent data for "protected" and
 % "unprotected" group, 
 [np,~]  = size(Ap);
