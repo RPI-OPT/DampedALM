@@ -2,7 +2,7 @@ function [out] = iPALM_qcqp(Q0, Q, c0, c,d,down,up,opts)
 
 %# Problem setting
 % we are solving a quadratic problem with non convex quadratic objective and a
-% quadratic convex constraint, i.e. min_x 0.5*x'Q_0x + c_0'x  s.t
+% convex quadratic constraint, i.e. min_x 0.5*x'Q_0x + c_0'x  s.t
 % 0.5*x'Q_jx + c_j'x + d_j <= 0, x \in [down,up]
 
 %Parameters
