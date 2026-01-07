@@ -2,7 +2,7 @@ function [x,y,out] = iPALM_QP(opts,x, y,I, beta0,rho,epsilon,maxouter,mu)
 
 %# Problem setting
 % we are solving a quadratic problem with non convex quadratic objective and a
-% convex linear constraint, i.e. min_x 0.5*x'Q_0x + c_0'x  s.t Ax = b, x \in [down,up]
+% linear constraint, i.e. min_x 0.5*x'Q_0x + c_0'x  s.t Ax = b, x \in [down,up]
 
 %Parameters
 % x is the primal variable, y and z are dual variables
